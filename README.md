@@ -1,137 +1,118 @@
-Dayline – Task Manager (MERN Stack)
+# DayLine - Task Management Application
 
-A full-stack task management application built using the MERN Stack (MongoDB, Express, React, Node.js).
-Dayline helps users create, update, track, and organize their daily tasks with an intuitive dashboard and secure authentication system.
+A modern full-stack task management web application built with **MERN** stack (MongoDB, Express.js, React.js, Node.js). DayLine allows users to create, manage, track, and organize daily tasks with features like priority levels, due dates, completion status, progress tracking, and user authentication.
 
-🚀 Features
-🔐 Authentication
+**Live Demo:** [https://dayline-task.netlify.app](https://dayline-task.netlify.app)
 
-User Sign Up & Login
+## Project Structure
 
-JWT-based authentication
-
-Protected routes (frontend + backend)
-
-📝 Task Management
-
-Create, Read, Update, Delete (CRUD) tasks
-
-Mark tasks as completed
-
-Organized dashboard view
-
-🎨 Frontend (React)
-
-Responsive UI (mobile + desktop)
-
-Component-based architecture
-
-Reusable components: Navbar, Sidebar, Layout
-
-Pages: Dashboard, Tasks, Profile, Login, Signup
-
-🛠 Backend (Node.js + Express)
-
-RESTful API
-
-Modular MVC structure
-
-Middleware-based authentication
-
-Separate models, controllers, and routes
-
-🗄 MongoDB
-
-Mongoose models for User & Task
-
-Secure password hashing
-
-📂 Project Structure
-Dayline/
-│
+```
+DayLine/
 ├── backend/
 │   ├── config/
 │   │   └── database.js
 │   ├── controllers/
 │   │   ├── taskController.js
-│   │   └── userController.js
-│   ├── middlewares/
-│   │   └── auth.js
+│   │   ├── userController.js
+│   │   └── authMiddlewares.js
 │   ├── models/
 │   │   ├── taskModel.js
 │   │   └── userModel.js
 │   ├── routes/
-│   │   ├── taskRoutes.js
-│   │   └── userRoutes.js
+│   ├── .env
+│   ├── package.json
 │   ├── server.js
-│   └── .env
-│
-└── frontend/
-    ├── public/
-    ├── src/
-    │   ├── components/
-    │   │   ├── Layout.jsx
-    │   │   ├── Login.jsx
-    │   │   ├── Navbar.jsx
-    │   │   ├── Profile.jsx
-    │   │   ├── Sidebar.jsx
-    │   │   └── SignUp.jsx
-    │   ├── pages/
-    │   │   ├── Dashboard.jsx
-    │   │   └── Tasks.jsx
-    │   ├── App.jsx
-    │   ├── config.js
-    │   └── main.jsx
-    └── .env
+│   └── node_modules/
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Layout.jsx
+│   │   │   ├── Login.jsx
+│   │   │   ├── Navbar.jsx
+│   │   │   ├── Profile.jsx
+│   │   │   ├── Sidebar.jsx
+│   │   │   └── Signup.jsx
+│   │   ├── pages/
+│   │   │   ├── Dashboard.jsx
+│   │   │   ├── Tasks.jsx
+│   │   │   └── App.jsx
+│   │   ├── config.js
+│   │   ├── index.css
+│   │   ├── main.jsx
+│   │   └── .env
+│   └── node_modules/
+├── .gitignore
+└── package.json
+```
 
-⚙️ Installation & Setup
-1. Clone the repository
-git clone https://github.com/your-username/dayline-task-manager.git
-cd dayline-task-manager
+## Features
 
-📌 Backend Setup
-Install dependencies:
-cd backend
-npm install
+- **User Authentication**: Secure signup, login, and profile management
+- **Task Management**: Create, edit, delete, mark as completed tasks
+- **Task Details**: Title, description, priority (High/Medium/Low), due date
+- **Dashboard**: Overview with stats (Total/Done/Pending tasks), progress bars, recent activity
+- **Search & Filters**: Search tasks, filter by status (All/Pending/Completed)
+- **Responsive UI**: Clean and modern design
+- **Real-time Updates**: Task progress and statistics
 
-Create .env file:
-PORT=5000
-MONGO_URL=your_mongodb_url
-JWT_SECRET=your_secret_key
+## Technologies Used
 
-Start backend:
-npm start
+- **Frontend**: React.js, Vite, JSX, CSS
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB
+- **Authentication**: JWT (JSON Web Tokens)
+- **Deployment**: Netlify (Frontend), Backend hosted separately (e.g., Render, Vercel, etc.)
 
-📌 Frontend Setup
-Install dependencies:
-cd ../frontend
-npm install
+## Setup Instructions
 
-Create .env (optional):
-VITE_API_URL=http://localhost:5000
+### Prerequisites
 
-Run frontend:
-npm run dev
+- Node.js (v18+ recommended)
+- MongoDB (local or MongoDB Atlas)
+- Git
 
-📘 API Endpoints
-Auth Routes
-Method	Endpoint	Description
-POST	/api/users/register	Register a new user
-POST	/api/users/login	Login user
-Task Routes
-Method	Endpoint	Description
-POST	/api/tasks	Create task
-GET	/api/tasks	Get all tasks
-PUT	/api/tasks/:id	Update task
-DELETE	/api/tasks/:id	Delete task
-🧪 Tech Stack
+### Backend Setup
 
-Frontend: React, Vite, Axios
+1. Navigate to `backend/` folder
+2. Create `.env` file with:
+   ```
+   PORT=5000
+   MONGO_URI=your_mongodb_connection_string
+   JWT_SECRET=your_jwt_secret
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Start server:
+   ```bash
+   npm start
+   ```
 
-Backend: Node.js, Express
+### Frontend Setup
 
-Database: MongoDB, Mongoose
+1. Navigate to `frontend/` folder
+2. Create `.env` file with:
+   ```
+   VITE_API_URL=http://localhost:5000
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Start development server:
+   ```bash
+   npm run dev
+   ```
 
-Auth: JWT, bcrypt
+## Future Improvements
 
-Styling: CSS
+- Add email notifications
+- Task categories and tags
+- Calendar integration
+- Mobile responsiveness enhancements
+  
+## Author
+Shivam Gangwar  
+Email: shivamgangwar2197@gmail.com
